@@ -2,6 +2,7 @@
 import inquirer from 'inquirer';
 import fs from 'fs';
 import { log } from 'console';
+import generateMarkdown from './utils/generateMarkdown.js';
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -27,6 +28,11 @@ const questions = [
     },
     {
         type:'input',
+        name:'learn',
+        message:'What did you learn?',
+    },
+    {
+        type:'input',
         name:'installation',
         message:'What are the steps required to install your project? Please provide a step-by-step description of how to get the development environment running.',
     },
@@ -45,11 +51,7 @@ const questions = [
         name:'tests',
         message:'How should developers test the functionality of the program?',
     },
-    {
-        type:'input',
-        name:'learn',
-        message:'What did you learn?',
-    },
+    
     {
         type:'list',
         name:'license',
@@ -89,9 +91,7 @@ function writeToFile(fileName, answers) {
 });
 // TODO: Create a function to initialize app
 function init() {
-    
 }
-
 // Function call to initialize app
 init();
 
