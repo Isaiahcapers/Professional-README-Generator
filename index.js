@@ -1,8 +1,7 @@
 // TODO: Include packages needed for this application
 import inquirer from 'inquirer';
 import fs from 'fs';
-import { type } from 'os';
-import Choices from 'inquirer/lib/objects/choices';
+import { log } from 'console';
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -57,13 +56,41 @@ const questions = [
         message:'What type of license would you like to use?',
         choices: ['MIT License','GNU GPLv3']
     },
+    {
+        type:'input',
+        name:'github',
+        message:'What is your GitHub Username?',
+    },
+    {
+        type:'input',
+        name:'email',
+        message:'What is your GitHub email?',
+    },
+    // {
+    //     type:'',
+    //     name:'',
+    //     message:'',
+    // },
 ];
+const fileName = 'Professional-README.md';
 
+ inquirer.prompt(questions)
+.then ((answers) => {
+    writeToFile(fileName,answers);
+    console.log(answers);
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
 
+function writeToFile(fileName, answers) {
+    fs.writeFile(fileName, JSON.stringify(answers), (err) =>
+        err ? console.log(err) : console.log('Success!')
+      );
+}
+
+});
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    
+}
 
 // Function call to initialize app
 init();
