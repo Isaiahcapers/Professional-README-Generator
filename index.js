@@ -3,9 +3,15 @@ import inquirer from 'inquirer';
 import fs from 'fs';
 import { log } from 'console';
 import generateMarkdown from './utils/generateMarkdown.js';
+import { type } from 'os';
 
 // TODO: Create an array of questions for user input
 const questions = [
+    {
+        type:'input',
+        name:'name',
+        message:"What's your name?"
+    },
     {
         type:'input',
         name:'title',
