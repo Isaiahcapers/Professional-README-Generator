@@ -68,29 +68,23 @@ const questions = [
         name:'email',
         message:'What is your GitHub email?',
     },
-    // {
-    //     type:'',
-    //     name:'',
-    //     message:'',
-    // },
 ];
-const fileName = 'Professional-README.md';
+const fileName = 'Most-Amazing-README.md';
 
- inquirer.prompt(questions)
-.then ((answers) => {
-    writeToFile(fileName,answers);
-    console.log(answers);
 // TODO: Create a function to write README file
-
 function writeToFile(fileName, answers) {
-    fs.writeFile(fileName, JSON.stringify(answers), (err) =>
+    fs.writeFile(fileName, answers, (err) =>
         err ? console.log(err) : console.log('Success!')
       );
 }
 
-});
+
 // TODO: Create a function to initialize app
 function init() {
+    inquirer.prompt(questions).then ((answers) => {
+        writeToFile(fileName,generateMarkdown({...answers}));
+        console.log(answers);    
+    });
 }
 // Function call to initialize app
 init();
