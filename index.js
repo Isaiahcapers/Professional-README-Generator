@@ -79,7 +79,7 @@ const fileName = 'Most-Amazing-README.md';
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, answers) {
-    fs.writeFile(fileName, answers, (err) =>
+    fs.writeFile('./dist/fileName', answers, (err) =>
         err ? console.log(err) : console.log('Success!')
       );
 }
