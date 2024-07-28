@@ -55,6 +55,19 @@ What are the steps required to install your project? Provide a step-by-step desc
   This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/).
 
 ## How to Contribute
-  test
+We welcome contributions from the community! Whether you want to fix a bug, add a new feature, or improve documentation, your contributions are greatly appreciated.
+
+1. Fork the repository.
+2. Clone your fork.
+3. Create a new branch.
+4. Make your changes.
+5. Commit your changes.
+6. Push to your fork.
+7. Create a pull request.
+
+### Dev Environment Setup
+1. Install dependcies
+2. Run the application
+
 ## Tests
   Go the extra mile and write tests for your application. Then provide examples on how to run them here
