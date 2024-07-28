@@ -79,11 +79,10 @@ const fileName = 'Most-Amazing-README.md';
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, answers) {
-    fs.writeFile('./dist/fileName', answers, (err) =>
+    fs.writeFile(`./dist/${fileName}`, answers, (err) =>
         err ? console.log(err) : console.log('Success!')
       );
 }
-
 
 // TODO: Create a function to initialize app
 function init() {
@@ -94,11 +93,3 @@ function init() {
 }
 // Function call to initialize app
 init();
-
-// .then((data) => {
-//     const filename = `${data.name.toLowerCase().split(' ').join('')}.json`;
-
-//     fs.writeFile(filename, JSON.stringify(data, null, '\t'), (err) =>
-//       err ? console.log(err) : console.log('Success!')
-//     );
-//   });
