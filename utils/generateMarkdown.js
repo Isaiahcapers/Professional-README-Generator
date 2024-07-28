@@ -36,14 +36,18 @@ function renderLicenseSection(license) {
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(answers) {
   return `# ${answers.title}
-  by ${answers.name}
+  By: ${answers.name}
 
   ${renderLicenseBadge(answers.license)}
 
-  ## Description  
+  ## Description
+  ### What was your motivation? 
   - ${answers["d-motivation"]}
-  - ${answers["d-build"]}  
+  ### Why did you build this project?
+  - ${answers["d-build"]}
+  ### What problem does it solve?   
   - ${answers["d-problem"]}
+  ### What did you learn?
   - ${answers.learn}
 
   ## Table of Contents
